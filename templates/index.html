@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul{
+            display: flex;
+        }
+        li{
+            padding: 2px 6px;
+        }
+        .text-white{
+            color: azure;
+        }
+        .container{
+            color: beige;
+        }
+        .row{
+            display: flex;
+            /* width: 80%; */
+            flex-wrap: wrap;
+        }
+        .col-md-3{
+            margin-top: 100px;
+            margin-left: 20px;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+        }
+        .card{
+            width: 400px;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <nav class="navbar" style="background-color: #00a65a;display: flex;">
+       <p class="navbar-brand">My Book Recommender</p>
+
+       <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/recommend">Recommend</a></li>
+        <li><a href="http://">Contact</a></li>
+    </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-white">
+                    Top Fifty Movies
+                </h1>
+            </div>
+        {% for i in range(book_name|length) %}
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{ image[i] }}" alt="" class="card-img-top">
+                        <h4>{{ book_name[i] }}</h4>
+                        <p>Author: {{ author[i] }}</p>
+                        <p>Rating: {{ rating[i] }}</p>
+                        <p>Votes: {{votes[i] }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+            
+
+        </div>
+    </div>
+</body>
+</html>
