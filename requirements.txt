@@ -1,3 +1,2 @@
-flask
-pickle
-numpy
+Flask==2.0.2
+numpy==1.22.2
